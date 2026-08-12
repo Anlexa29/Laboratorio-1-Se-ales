@@ -37,7 +37,7 @@ class Aplicacion:
         )
 
         self.frecuencia_muestreo = tk.IntVar(
-            value=44100
+            value=40000
         )
 
         self.crear_controles()
@@ -64,9 +64,8 @@ class Aplicacion:
             fill=tk.X
         )
 
-        # -------------------------
+        
         # TIPO DE SEÑAL
-        # -------------------------
 
         ttk.Label(
             frame_controles,
@@ -101,9 +100,7 @@ class Aplicacion:
             lambda event: self.actualizar()
         )
 
-        # -------------------------
         # FRECUENCIA
-        # -------------------------
 
         ttk.Label(
             frame_controles,
@@ -140,9 +137,9 @@ class Aplicacion:
             padx=10
         )
 
-        # -------------------------
+
         # AMPLITUD
-        # -------------------------
+
 
         ttk.Label(
             frame_controles,
@@ -179,9 +176,9 @@ class Aplicacion:
             padx=10
         )
 
-        # -------------------------
+
         # OFFSET
-        # -------------------------
+
 
         ttk.Label(
             frame_controles,
@@ -218,9 +215,9 @@ class Aplicacion:
             padx=10
         )
 
-        # -------------------------
+
         # FRECUENCIA DE MUESTREO
-        # -------------------------
+
 
         ttk.Label(
             frame_controles,
@@ -235,9 +232,10 @@ class Aplicacion:
             frame_controles,
             textvariable=self.frecuencia_muestreo,
             values=[
+                1000,
                 8000,
-                22050,
-                44100
+                22000,
+                40000
             ],
             state="readonly",
             width=20
@@ -254,9 +252,9 @@ class Aplicacion:
             lambda event: self.actualizar()
         )
 
-        # -------------------------
+   
         # BOTONES
-        # -------------------------
+   
 
         frame_botones = ttk.Frame(
             frame_controles
@@ -292,9 +290,9 @@ class Aplicacion:
             weight=1
         )
 
-        # -------------------------
+
         # GRÁFICA
-        # -------------------------
+
 
         self.frame_grafica = ttk.Frame(
             self.root,
